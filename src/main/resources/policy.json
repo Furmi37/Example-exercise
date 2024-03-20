@@ -1,0 +1,17 @@
+{
+  "policyName": "root",
+  "policyDocument": {
+    "version": "2012-10-17",
+    "statement": [
+      {
+        "sid": "IamListAccess",
+        "effect": "Allow",
+        "action": [
+          "iam:ListRoles",
+          "iam:ListUsers"
+        ],
+        "resource": "*"
+      }
+    ]
+  }
+}
