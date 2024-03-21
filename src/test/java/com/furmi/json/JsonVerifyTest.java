@@ -13,8 +13,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class PolicyJsonMethodsTest {
-
+class JsonVerifyTest {
     JsonVerify jsonVerify;
     JsonReadFromFile readFromFile;
 
@@ -38,8 +37,8 @@ class PolicyJsonMethodsTest {
         //when
         boolean result = jsonVerify.verifyResource(filePath);
         //then
-        assertEquals(false, result);
-        verify(readFromFile,times(1)).jsonFromFileToPolicyObject(filePath);
+        assertFalse(result);
+        verify(readFromFile, times(1)).jsonFromFileToPolicyObject(filePath);
     }
 
     @Test
@@ -48,7 +47,7 @@ class PolicyJsonMethodsTest {
         String filePath = "src/main/resources/policy.json";
         PolicyDocument policyDocument = new PolicyDocument("2012-10-17", new ArrayList<>());
         List<String> actionList = List.of("iam:ListRoles", "iam:ListUsers");
-        Statement statement = new Statement("IamListAccess", "Allow", actionList, " ");
+        Statement statement = new Statement("IamListAccess", "Allow", actionList, "arn:aws:s3:::bucket-name/*");
         policyDocument.getStatement().add(statement);
         Policy policy = new Policy("root", policyDocument);
 
@@ -56,7 +55,7 @@ class PolicyJsonMethodsTest {
         //when
         boolean result = jsonVerify.verifyResource(filePath);
         //then
-        assertEquals(true, result);
-        verify(readFromFile,times(1)).jsonFromFileToPolicyObject(filePath);
+        assertTrue(result);
+        verify(readFromFile, times(1)).jsonFromFileToPolicyObject(filePath);
     }
 }

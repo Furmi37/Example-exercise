@@ -9,10 +9,10 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws IOException {
         String filePath = userPath();
-        JsonReadFromFile readFromFile = new JsonReadFromFile();
-        JsonVerify methods = new JsonVerify(readFromFile);
+        JsonReadFromFile jsonReadFromFile = new JsonReadFromFile();
+        JsonVerify jsonVerify = new JsonVerify(jsonReadFromFile);
 
-        System.out.println(methods.verifyResource(filePath));
+        System.out.println(jsonVerify.verifyResource(filePath));
     }
 
     static String userPath() {

@@ -9,13 +9,13 @@ import java.util.List;
 
 @AllArgsConstructor
 public class JsonVerify {
-    JsonReadFromFile readFromFile;
+    JsonReadFromFile jsonReadFromFile;
 
     public boolean verifyResource(String filePath) throws IOException {
-        Policy policy = readFromFile.jsonFromFileToPolicyObject(filePath);
-        List<Statement> statement = policy.getPolicyDocument().getStatement();
-        for (int i = 0; i < statement.size(); i++) {
-            if (statement.get(i).getResource().equals("*")) {
+        Policy policy = jsonReadFromFile.jsonFromFileToPolicyObject(filePath);
+        List<Statement> statements = policy.getPolicyDocument().getStatement();
+        for (Statement s : statements) {
+            if (s.getResource().equals("*")) {
                 return false;
             }
         }
