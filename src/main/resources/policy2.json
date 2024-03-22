@@ -11,7 +11,7 @@
                 "iam:ListRoles",
                 "iam:ListUsers"
               ],
-              "Resource": "arn:aws:s3:::bucket-name/"
+              "Resource": "arn:aws:s3:::bucket-name/ "
             }
           ]
         }
