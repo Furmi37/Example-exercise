@@ -18,8 +18,8 @@ It has a method verifying the input JSON data (AWS::IAM::Role Policy)
 - Maven
 
 ### How to run project in MacOs Terminal
-- when we have installed Maven on our computer we need to open Terminal
-- Enter a file where we have our project named 'Remintly-exercise'
+- When we have installed Maven on our computer we need to open Terminal,
+- Enter a file where we have our project named 'Remintly-exercise',
 - Then in our command line we need to write:
 ```
  remintly-exercise % mvn compile
