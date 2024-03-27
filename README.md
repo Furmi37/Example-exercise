@@ -22,7 +22,7 @@ It has a method verifying the input JSON data (AWS::IAM::Role Policy)
 ```
  source .bash_profile
 ```
-- Next enter a file where we have our project named 'Remintly-exercise'
+- Next enter a file where we have our project named 'Remitly-exercise'
 - Then in our command line we need to write:
 ```
  mvn compile
