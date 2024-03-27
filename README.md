@@ -41,7 +41,7 @@ It has a method verifying the input JSON data (AWS::IAM::Role Policy)
 ```
 - The program will show us: "Enter a file path from which you want to verfiy IAM Policy:" and we need to write path. To check example with Resoursce with "*" write:
 ```
- src/main/resources/policy.json
+src/main/resources/policy.json
 ```
 - When we want test opposite Resource, we need to again write:
 ```
@@ -49,5 +49,5 @@ It has a method verifying the input JSON data (AWS::IAM::Role Policy)
 ```
 - And next:
 ```
- src/main/resources/policy2.json
+src/main/resources/policy2.json
 ```
